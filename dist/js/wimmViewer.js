@@ -1,6 +1,6 @@
 
 (function($) {
-    $.fn.WimmCarousel = function (options) {
+    $.fn.WimmViewer = function (options) {
 
         var self = this;
 

@@ -50,7 +50,7 @@ __Javascript__
 
 ```javascript
  $(function(){
-        $('#slider1').WimmCarousel({
+        $('#slider1').WimmViewer({
             miniatureWidth : 100,
             miniatureHeight: 100
             // Availables customizations:
