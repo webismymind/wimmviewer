@@ -12,7 +12,7 @@ __By Downloading files:__
 
 ```html
 <script src="https://code.jquery.com/jquery-1.12.3.min.js" integrity="sha256-aaODHAgvwQW1bFOGXMeX+pC4PZIPsvn2h1sArYOhgXQ="   crossorigin="anonymous"></script>
-<script src="js/wimmviewer/dist/js/wimmviewer.min.js"></script>
+<script src="js/wimmViewer/dist/js/wimmviewer.min.js"></script>
 <link rel="stylesheet" type="text/css" href="css/wimmviewer/dist/css/wimmViewer.css" />
 
 ```
