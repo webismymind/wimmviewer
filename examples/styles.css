@@ -1,0 +1,17 @@
+body {
+  background: #232323;
+  font-family: 'Open Sans', sans-serif; }
+  body h1 {
+    color: white;
+    font-weight: 300;
+    text-align: center; }
+  body .wimm_carousel {
+    padding: 20px;
+    border-radius: 3px;
+    max-width: 500px;
+    margin: 0 auto 0 auto;
+    background: white;
+    margin-top: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.6); }
+
+/*# sourceMappingURL=styles.css.map */

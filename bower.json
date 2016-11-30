@@ -1,0 +1,19 @@
+{
+  "name": "jquery.wimmcarousel",
+  "authors": [
+    "Webismymind"
+  ],
+  "description": "A simple, lightweight jquery carousel updating a picture",
+  "main": "",
+  "keywords": [
+    "jquery",
+    "carousel",
+    "viewer"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies":{
+    "jquery": "~2.0.3",
+    "fontawesome": "~4.1.0"
+  }
+}

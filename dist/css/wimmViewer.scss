@@ -1,0 +1,102 @@
+$wimm_carousel_color: #5897e3;
+
+.wimm_carousel {
+  .carousel {
+    position: relative;
+
+    white-space: nowrap;
+    -moz-white-space: nowrap;
+    -webkit-white-space: nowrap;
+
+    overflow: hidden;
+
+    letter-spacing: -0.31em;
+    -moz-letter-spacing: -0.31em;
+    -webkit-letter-spacing: -0.31em;
+
+    .carousel_inner {
+      position: relative;
+      left: 0px;
+      padding-left:0px;
+      text-align:center;
+
+      -webkit-transition: left 0.4s;
+      transition: left 0.4s;
+      .item {
+        width: 200px;
+        height: 150px;
+        display: inline-block;
+        background-size: cover;
+        opacity: 1;
+
+        box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+
+        border-radius: 5px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+
+        transition: opacity 0.4s;
+        -webkit-transition: opacity 0.4s;
+
+        &:hover {
+          opacity: 0.6;
+          cursor: pointer;
+        }
+        &.active {
+          border: 2px solid $wimm_carousel_color;
+        }
+
+      }
+
+    }
+    .next, .prev {
+      z-index: 10;
+      position: absolute;
+      top: 50%;
+      color: white;
+      background: $wimm_carousel_color;
+      letter-spacing: normal;
+      -moz-letter-spacing: normal;
+      -webkit-letter-spacing: normal;
+      padding:3px 5px;
+
+      border-radius:3px;
+
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.16);
+      -moz-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.26);
+      -webkit-box-shadow: 0 0px 5px rgba(0, 0, 0, 0.26);
+
+      text-align: center;
+      font-size: 1em;
+
+      transform: translateY(-50%);
+      -moz-transform: translateY(-50%);
+      -webkit-transform: translateY(-50%);
+
+      &:hover {
+        text-shadow: 0 5px 20px rgba(0, 0, 0, 0.46);
+        cursor: pointer;
+      }
+
+    }
+  }
+  .next {
+    right:15px;
+  }
+  .prev  {
+    left:15px;
+  }
+  .mainImg {
+    img {
+      border-radius:3px;
+      max-width:100%;
+      display:block;
+    }
+  }
+
+
+}
+
+
