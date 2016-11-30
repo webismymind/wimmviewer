@@ -1,5 +1,5 @@
 {
-  "name": "jquery.wimmcarousel",
+  "name": "jquery.wimmviewer",
   "authors": [
     "Webismymind"
   ],
@@ -8,6 +8,9 @@
   "keywords": [
     "jquery",
     "carousel",
+    "image",
+    "viewer",
+    "slider",
     "viewer"
   ],
   "license": "MIT",
