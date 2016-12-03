@@ -58,6 +58,7 @@ __Javascript__
              miniatureSpace: 10,
              nextText:'Next',
              prevText:'Prev',
+             viewerMaxHeight: 300,
              onImgChange : function() { console.log('changed'); },
              onNext : function() { console.log('next'); },
              onPrev : function() { console.log('previous'); },
