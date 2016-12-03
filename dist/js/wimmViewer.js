@@ -16,6 +16,7 @@
         options.onImgChange = typeof options.onImgChange === 'function' ? options.onImgChange : function(){};
         options.onNext = typeof options.onNext === 'function' ? options.onNext : function(){};
         options.onPrev = typeof options.onPrev === 'function' ? options.onPrev : function(){};
+        options.viewerMaxHeight = options.viewerMaxHeight || false;
 
         var MAX_CAROUSEL_WIDTH = (options.miniatureSpace+options.miniatureWidth) * $(self).find('.item').length,
 
@@ -43,6 +44,10 @@
         $(firstMiniature).addClass('active');
         var firstImageUrl = $(firstMiniature).attr('data-url');
         $(mainPicture).append('<img src='+firstImageUrl+' />');
+
+       if (options.viewerMaxHeight) {
+           $(mainPicture).find('img').css('maxHeight',options.viewerMaxHeight);
+       }
 
         $(self).find('.item').each(function(){
             $(this).click(function(){
