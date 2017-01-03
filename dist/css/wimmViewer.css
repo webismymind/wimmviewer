@@ -65,4 +65,16 @@
   display: block;
   margin: 0 auto 0 auto; }
 
+.wimm_carousel.render3d .carousel_inner .item {
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s; }
+  .wimm_carousel.render3d .carousel_inner .item.isNext {
+    transform: perspective(500px) rotateY(-45deg);
+    -webkit-transform: perspective(500px) rotateY(-45deg);
+    -moz-transform: perspective(500px) rotateY(-45deg); }
+  .wimm_carousel.render3d .carousel_inner .item.isPrev {
+    transform: perspective(500px) rotateY(45deg);
+    -webkit-transform: perspective(500px) rotateY(45deg);
+    -moz-transform: perspective(500px) rotateY(45deg); }
+
 /*# sourceMappingURL=wimmViewer.css.map */

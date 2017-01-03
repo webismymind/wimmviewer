@@ -1,4 +1,3 @@
-
 (function($) {
     $.fn.WimmViewer = function (options) {
 
@@ -17,14 +16,27 @@
         options.onNext = typeof options.onNext === 'function' ? options.onNext : function(){};
         options.onPrev = typeof options.onPrev === 'function' ? options.onPrev : function(){};
         options.viewerMaxHeight = options.viewerMaxHeight || false;
+        options.startIndex = options.startIndex || 0;
+        options.render3d = options.render3d || false;
 
-        var MAX_CAROUSEL_WIDTH = (options.miniatureSpace+options.miniatureWidth) * $(self).find('.item').length,
+        if (options.render3d) {
+            $(self).addClass('render3d');
 
-            cursor = 0,
+        }
 
-            carousel = $(self).find('.carousel'),
+        var MAX_CAROUSEL_WIDTH = (options.miniatureSpace+options.miniatureWidth) * $(self).find('.item').length;
+
+
+
+
+        var carousel = $(self).find('.carousel'),
             carouselInner = $(self).find('.carousel_inner'),
-            firstMiniature = $($(self).find('.item')[0]);
+            firstMiniature = $($(self).find('.item')[options.startIndex]);
+
+        var cursor = (options.miniatureSpace*2 + options.miniatureWidth) * (options.startIndex-1);
+        if (cursor <0) cursor =0;
+
+        $(carouselInner).css('left',-cursor+'px');
 
         $(self).append('<div class="mainImg"></div>');
 
@@ -38,16 +50,34 @@
         var  nextButton = $(self).find('.next'),
             prevButton = $(self).find('.prev');
 
-        $(prevButton).hide();
+        if (cursor == 0) $(prevButton).hide();
 
         //Init first picture
         $(firstMiniature).addClass('active');
+
+        var isPrev = true;
+
+        $(self).find('.item').each(function(){
+
+            if (isPrev && !$(this).hasClass('active')) {
+                $(this).addClass('isPrev');
+            }
+            else if ( $(this).hasClass('active')) {
+                isPrev = false;
+            }
+            else {
+                $(this).addClass('isNext');
+
+            }
+
+        });
+
         var firstImageUrl = $(firstMiniature).attr('data-url');
         $(mainPicture).append('<img src='+firstImageUrl+' />');
 
-       if (options.viewerMaxHeight) {
-           $(mainPicture).find('img').css('maxHeight',options.viewerMaxHeight);
-       }
+        if (options.viewerMaxHeight) {
+            $(mainPicture).find('img').css('maxHeight',options.viewerMaxHeight);
+        }
 
         $(self).find('.item').each(function(){
             $(this).click(function(){
@@ -56,6 +86,22 @@
                 $(mainPicture).find('img').attr('src',imageUrl);
                 $(self).find('.active').removeClass('active');
                 $(this).addClass('active');
+                var isPrev = true;
+                $(self).find('.item').removeClass('isPrev').removeClass('isNext').each(function(){
+
+                    if (isPrev && !$(this).hasClass('active')) {
+                        $(this).addClass('isPrev');
+                    }
+                    else if ( $(this).hasClass('active')) {
+                        isPrev = false;
+                    }
+                    else {
+                        $(this).addClass('isNext');
+
+                    }
+
+
+                })
             });
             $(this).css({
                 width: options.miniatureWidth+'px',
