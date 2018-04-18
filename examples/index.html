@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<h1>WimmViewer Example</h1>
+<h1>WimmSlider Example</h1>
 <div id="slider1">
     <div class="carousel">
         <ul class="carousel_inner">
@@ -33,14 +33,12 @@
 <script src="../dist/js/wimmViewer.js"></script>
 <script>
     $(function(){
-        $('#slider1').WimmViewer({
+        $('#slider1').WimmCarousel({
             miniatureWidth : 100,
             miniatureHeight: 100,
-            viewerMaxHeight: 300,
-            render3d: true,
-            startIndex: 3
             // Availables customizations:
             /*
+             miniaturePosition : 'bottom', // 'top'|'bottom'
              miniatureSpace: 10,
              nextText:'Next',
              prevText:'Prev',
